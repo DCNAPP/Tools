@@ -16,13 +16,13 @@ def console(msg): os.system(msg)
 console('cls')
 
 
-r = requests.get('https://senpai-10.github.io/DCNAPP/config/version.json')
+r = requests.get('https://dcnapp.github.io/Config/version.json')
 config = r.json()
 
 VersionNumber = config['latest-version']
 
 def download(name): 
-    with requests.get(f'https://github.com/Senpai-10/DCNAPP/releases/download/{VersionNumber}/DCNAPP.exe') as rq:
+    with requests.get(f'https://github.com/DCNAPP/DCNAPP/releases/download/{VersionNumber}/DCNAPP.exe') as rq:
         with open(f'{name}', 'wb') as f:
             f.write(rq.content)
 
